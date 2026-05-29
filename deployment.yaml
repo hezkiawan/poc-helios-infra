@@ -17,6 +17,6 @@ spec:
       containers:
       - name: backend-container
         # THIS IS THE CRITICAL LINE OUR ROBOT WILL UPDATE
-        image: ghcr.io/hezkiawan/poc-helios-backend:v1.0.0
+        image: ghcr.io/hezkiawan/poc-helios-backend:v1.0.1
         ports:
         - containerPort: 8080
