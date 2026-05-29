@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helios-backend-deployment
+  labels:
+    app: helios-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: helios-backend
+  template:
+    metadata:
+      labels:
+        app: helios-backend
+    spec:
+      containers:
+      - name: backend-container
+        # THIS IS THE CRITICAL LINE OUR ROBOT WILL UPDATE
+        image: ghcr.io/hezkiawan/poc-helios-backend:v1.0.0
+        ports:
+        - containerPort: 8080
